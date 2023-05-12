@@ -275,5 +275,5 @@ JSOBS.deserialize = function(arrayBuffer) {
 	return element;
 };
 
-((typeof module != 'undefined') ? module : {}).exports = JSOBS;
+export default JSOBS;
 
