@@ -13,7 +13,6 @@ JSOBS.UINT   = 192; // 11000000
 JSOBS.FLOAT  = 224; // 11100000
 JSOBS.NULL   = 240; // 11110000
 
-
 JSOBS.Tracker = function(buffer) {
 	this.index = 0;
 	this.dataView = new DataView(buffer, this.index);
