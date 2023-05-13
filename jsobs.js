@@ -1,8 +1,5 @@
-var TextEncoder = TextEncoder || (require("util").TextEncoder);
-var TextDecoder = TextDecoder || (require("util").TextDecoder);
-
 let JSOBS = {};
-JSOBS.encoder = new TextEncoder('UTF-8'); // CDOS.encoder.encode returns Uint8Array
+JSOBS.encoder = new TextEncoder('UTF-8'); // JSOBS.encoder.encode returns Uint8Array
 JSOBS.decoder = new TextDecoder('UTF-8');
 
 JSOBS.FLAGS  = 240; // 11110000
@@ -15,8 +12,6 @@ JSOBS.INT    = 160; // 10100000
 JSOBS.UINT   = 192; // 11000000
 JSOBS.FLOAT  = 224; // 11100000
 JSOBS.NULL   = 240; // 11110000
-
-
 
 
 JSOBS.Tracker = function(buffer) {
