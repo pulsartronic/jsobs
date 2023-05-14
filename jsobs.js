@@ -12,6 +12,7 @@ JSOBS.INT    = 160; // 10100000
 JSOBS.UINT   = 192; // 11000000
 JSOBS.FLOAT  = 224; // 11100000
 JSOBS.NULL   = 240; // 11110000
+// JSOBS.UNDEFINED = 240; // 11110000
 
 JSOBS.Tracker = function(buffer) {
 	this.index = 0;
@@ -258,14 +259,14 @@ JSOBS.size = function(element) {
 JSOBS.serialize = function(element) {
 	let size = JSOBS.size(element);
 	var arrayBuffer = new ArrayBuffer(size);
-	var iterator = new JSOBS.Tracker(arrayBuffer);
-	iterator.write(element);
+	var tracker = new JSOBS.Tracker(arrayBuffer);
+	tracker.write(element);
 	return arrayBuffer;
 };
 
 JSOBS.deserialize = function(arrayBuffer) {
-	var iterator = new JSOBS.Tracker(arrayBuffer);
-	var element = iterator.read();
+	var tracker = new JSOBS.Tracker(arrayBuffer);
+	var element = tracker.read();
 	return element;
 };
 
